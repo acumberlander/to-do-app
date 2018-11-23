@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
 import 'bootstrap';
 import './index.scss';
-import apiKeys from '../db/apiKeys.json';
+import apiKeys from '../db/apiKeys';
 import createNavbar from './components/Navbar/navbar';
 import loginButton from './components/Auth/auth';
 import authHelpers from './helpers/authHelpers';
@@ -10,7 +10,7 @@ import showAddForm from './components/AddEditTasks/addEditTasks';
 
 
 const initializeApp = () => {
-  firebase.initializeApp(apiKeys.fireBaseKeys);
+  firebase.initializeApp(apiKeys.firebaseKeys);
   createNavbar();
   authHelpers.checkLoginStatus(taskPage);
   loginButton();

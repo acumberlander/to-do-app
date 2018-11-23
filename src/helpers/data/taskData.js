@@ -1,7 +1,7 @@
 import axios from 'axios';
 import apiKeys from '../../../db/apiKeys.json';
 
-const firebaseUrl = apiKeys.fireBaseKeys.databaseURL;
+const firebaseUrl = apiKeys.firebaseKeys.databaseURL;
 
 const getAllTasks = () => new Promise((resolve, reject) => {
   axios.get(`${firebaseUrl}/tasks.json`)
