@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import 'bootstrap';
 import './index.scss';
+import $ from 'jquery';
 import apiKeys from '../db/apiKeys';
 import createNavbar from './components/Navbar/navbar';
 import loginButton from './components/Auth/auth';

@@ -1,5 +1,5 @@
 import $ from 'jquery';
-// import authHelpers from '../../helpers/authHelpers';
+import authHelpers from '../../helpers/authHelpers';
 import taskData from '../../helpers/data/taskData';
 import initializeTaskPage from '../TaskPage/taskPage';
 
@@ -21,7 +21,7 @@ const getttingTaskFromForm = () => {
   const task = {
     task: $('#form-task').val(),
     isCompleted: false,
-    // uid: authHelpers.getCurrentUid(),
+    uid: authHelpers.getCurrentUid(),
   };
   return task;
 };

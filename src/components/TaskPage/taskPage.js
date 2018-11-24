@@ -8,7 +8,7 @@ const printSingleTask = (task) => {
       <h1>${task.isCompleted}</h1>
       <h3>${task.task}</h3>
       <button class="btn btn-danger delete-btn" data-delete-id=${task.id}>X</button>
-      <button class="btn btn-info edit-btn" data-edit-id=${task.id}>Edit</button>
+      <button class="btn btn-info edit-btn">Edit</button>
     </div>
   `;
   $('#single-container').html(taskString);
