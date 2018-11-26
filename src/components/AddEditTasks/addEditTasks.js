@@ -28,11 +28,8 @@ const getttingTaskFromForm = () => {
 
 const buildAddForm = () => {
   const emptyTask = {
-    name: '',
-    address: '',
-    phoneNumber: '',
-    email: '',
-    relationship: '',
+    task: '',
+    isCompleted: '',
   };
 
   let domString = '<h2>Add New Task</h2>';
