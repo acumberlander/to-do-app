@@ -15,9 +15,6 @@ const getAllTasks = uid => new Promise((resolve, reject) => {
         });
       }
       resolve(taskArray);
-      console.log(firebaseUrl);
-      console.log(results);
-      console.log(tasksObject);
       console.log(taskArray);
     })
     .catch((error) => {

@@ -27,28 +27,26 @@ const getSingleTask = (e) => {
     });
 };
 
-const buildDropdown = (tasksArray) => {
-  let dropdown = `<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Pick a Task
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">`;
-  if (tasksArray.length) {
-    tasksArray.forEach((task) => {
-      dropdown += `<div class="dropdown-item get-single" data-dropdown-id=${task.id}>${task.task}</div>`;
+const cardBuilder = (taskArray) => {
+  let domString = '';
+  if (taskArray.length) {
+    taskArray.forEach((task) => {
+      domString += `
+      <div class="card">
+        <div class=""data-card-id=${task.id}>${task.task}</div>
+        <div class=""></div>
+      </div>
+      `;
+      $('#single-container').html(domString);
     });
-  } else {
-    dropdown += '<div class="dropdown-item">You have no tasks</div>';
   }
-  dropdown += '</div></div>';
-  $('#dropdown-container').html(dropdown);
 };
 
 const taskPage = () => {
   const uid = authHelpers.getCurrentUid();
   taskData.getAllTasks(uid)
-    .then((tasksArray) => {
-      buildDropdown(tasksArray);
+    .then((taskArray) => {
+      cardBuilder(taskArray);
     })
     .catch((error) => {
       console.error('error in getting tasks', error);

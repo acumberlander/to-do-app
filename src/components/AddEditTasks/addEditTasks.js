@@ -7,7 +7,7 @@ const formBuilder = (task) => {
   const form = `
   <div class="form-group">
     <label for="form-task">Task</label>
-    <input type="text" class="form-control" value="${task.task}" id="form-task-name" placeholder="Do your homework">
+    <input type="text" class="form-control" value="${task.task}" id="form-task" placeholder="Do your homework">
   </div>
   <div class="form-group">
     <label for="form-task-status">Status:</label>
@@ -20,7 +20,7 @@ const formBuilder = (task) => {
 const getttingTaskFromForm = () => {
   const task = {
     task: $('#form-task').val(),
-    isCompleted: false,
+    isCompleted: $('#form-task-status').val(),
     uid: authHelpers.getCurrentUid(),
   };
   return task;
