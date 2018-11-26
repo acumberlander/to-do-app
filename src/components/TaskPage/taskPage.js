@@ -32,9 +32,13 @@ const cardBuilder = (taskArray) => {
   if (taskArray.length) {
     taskArray.forEach((task) => {
       domString += `
-      <div class="card">
-        <div class=""data-card-id=${task.id}>${task.task}</div>
-        <div class=""></div>
+      <div class="card m-3">
+        <div class="text-center"data-card-id=${task.id}>${task.task}
+          <div class="d-flex row justify-content-end">
+          <button class="btn btn-info edit-btn mr-3 mb-1">Edit</button>
+            <button class="btn btn-danger delete-btn mr-5 mb-1" data-delete-id=${task.id}>X</button>
+          </div>
+        </div>
       </div>
       `;
       $('#single-container').html(domString);
