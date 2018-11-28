@@ -20,7 +20,7 @@ const formBuilder = (task) => {
 const getttingTaskFromForm = () => {
   const task = {
     task: $('#form-task').val(),
-    isCompleted: $('#form-task-status').val(),
+    isCompleted: false,
     uid: authHelpers.getCurrentUid(),
   };
   return task;
