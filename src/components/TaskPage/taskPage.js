@@ -110,6 +110,7 @@ const updateCompletedTask = (e) => {
   // }
   taskData.updatedCompleteTask(taskId, isCompleted)
     .then(() => {
+      taskPage();
     })
     .catch((err) => {
       console.error('error in updating flag', err);
