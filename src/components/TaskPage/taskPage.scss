@@ -1,0 +1,119 @@
+.card {
+  height: 250px;
+  width: 250px;
+  background-image: url('http://realpropertyalpha.com/p/2018/04/wrinkled-notebook-paper-background-world-of-label-with-regard-to-wrinkled-notebook-paper-background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Indie Flower';
+  font-size: 30px;
+}
+
+.card-content {
+  display: flex;
+  justify-content: center;
+}
+
+.edit-btn, .delete-btn {
+  height: 38px;
+  width: 72px;
+
+  img {
+    height: 38px;
+    width: 72px;
+  }
+}
+
+.form-check {
+  margin: 0;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+#single-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#completed {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#tasks {
+  text-align: center;
+}
+
+.completedTasksHeader {
+  width: 500px;
+  font-size: 50px;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Indie Flower';
+  margin: 30px 0 50px 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+
+.addEditForm {
+  display: flex;
+  justify-content: center;
+  width: 600px;
+  color: white;
+}
+
+.completedTasksContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.completedTaskUnderline {
+  color: white;
+  font-size: 50px;
+}
+
+.thingsToDoUnderline {
+  color: white;
+  font-size: 50px;
+}
+
+.thingsToDoHeader {
+  color: white;
+  font-size: 50px;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Indie Flower';
+  margin: 30px 0 50px 0;
+}
+
+#google-auth {
+  margin-top: 200px;
+}
+
+#task {
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+.thingsToDo {
+  display: flex;
+  flex-direction: column;
+}
+
+.completedTasks {
+  display: flex;
+  flex-direction: column;
+}
+
+.taskContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

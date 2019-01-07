@@ -2,5 +2,24 @@
 @import "./styles/variables";
 
 body {
-  background-color: $brown;
+  background-image: url('https://wallpapercave.com/wp/JS9wRiY.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+u {
+  text-decoration: underline;
+  width: auto;
+}
+
+.nav-link {
+  cursor: pointer;
+}
+
+.navbar-nav {
+
+  li {
+    width:60px;
+  }
+  
 }

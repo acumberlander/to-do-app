@@ -3,18 +3,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Open+Sans" rel="stylesheet">
   <title>TDA</title>
 </head>
 <body>
   <div id='navbar'></div>
   <div id='auth'></div>
-  <div id='tasks'>
-    <div id='single-container'></div>
-    <button id="show-task-form" class="btn btn-success">Add Task</button>
-    <h2>Completed Tasks</h2>
-    <div id="completed"></div>
+  <button id="show-task-form" class="btn btn-success m-4">Add Task</button>
+  <div class="addEditForm">
+    <div id="add-edit-task" style="display:none"></div>
   </div>
-  <div id="add-edit-task" style="display:none"></div>
+  <div class="taskContainer">
+    <div id='tasks' class="d-inline-flex">
+      <div class="thingsToDo col m-3">
+        <div class="d-flex justify-content-center">
+          <h2 class="thingsToDoHeader"><u class="thingsToDoUnderline">Things to Do</u></h2>
+        </div>
+        <div id='single-container'></div>
+      </div>
+      <div class="completedTasks col m-3">
+        <div class="completedTasksContainer">
+          <h2 class="completedTasksHeader"><u class="completedTaskUnderline">Completed Tasks</u></h2>
+        </div>
+        <div id="completed"></div>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>

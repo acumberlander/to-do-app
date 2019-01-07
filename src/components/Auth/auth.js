@@ -2,14 +2,16 @@ import $ from 'jquery';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import './auth.scss';
-import googleButton from './google-sign-in.png';
+// import googleButton from './google-sign-in.png';
 
 
 const loginButton = () => {
   const domString = `
-    <button id="google-auth" class="btn btn-secondary">
-      <img src="${googleButton}"/>
+  <div class="d-flex justify-content-center">
+    <button id="google-auth" class="btn btn-light">
+      Google Login
     </button>
+  </div>
   `;
   $('#auth').html(domString);
   $('#google-auth').on('click', () => {

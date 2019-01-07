@@ -9,16 +9,18 @@ const navbarEvents = () => {
       firebase.auth().signOut().then(() => {
         $('#auth').show();
         $('#tasks').hide();
+        $('.thingsToDo').hide();
+        $('.completedTasks').hide();
+        $('#show-task-form').hide();
       }).catch((err) => {
         console.error('you still logged in', err);
       });
     } else if (e.target.id === 'navbar-button-tasks') {
       $('#auth').hide();
       $('#tasks').show();
-    } else {
-      // click authentication
-      $('#auth').show();
-      $('#tasks').hide();
+      $('.thingsToDo').show();
+      $('.completedTasks').show();
+      $('#show-task-form').show();
     }
   });
 };

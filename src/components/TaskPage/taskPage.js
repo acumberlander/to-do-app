@@ -2,6 +2,7 @@
 import $ from 'jquery';
 import authHelpers from '../../helpers/authHelpers';
 import taskData from '../../helpers/data/taskData';
+import './taskPage.scss';
 
 const printSingleTask = (task) => {
   const taskString = `
@@ -33,24 +34,27 @@ const cardBuilder = (taskArray) => {
     if (task.isCompleted === false) {
       domString += `
       <div class="card m-3">
-        <div class="text-center" id=${task.id} data-card-id=${task.id}>${task.task}
-          <div class="d-flex justify-content-around row">
-            <div class="form-check form-check-inline">
-              <label class="form-check-label m-2" for="${task.id}">Task Complete?</label>
-              <input class="form-check-input isCompleted-checkbox" type="checkbox" id="${task.id}">
+        <div class="container">
+          <div class="text-center" id=${task.id} data-card-id=${task.id}>
+          <div class="notCompleted">
+            ${task.task}
+          </div>
+            <div class="d-flex justify-content-around row">
+              <div class="form-check form-check-inline">
+                <label class="form-check-label m-2" for="${task.id}">Task Complete?</label>
+                <input class="form-check-input notCompleted-checkbox" type="checkbox" id="${task.id}">
+              </div>
             </div>
-            <div>
-              <button class="btn btn-info edit-btn mr-3 mb-1" data-edit-id=${task.id}>Edit</button>
-              <button class="btn btn-danger delete-btn mr-5 mb-1" data-delete-id=${task.id}>Delete</button>
+            <div mt-4>
+              <button class="btn btn-info edit-btn m-2" data-edit-id=${task.id}>Edit</button>
+              <button class="btn btn-danger delete-btn m-2" data-delete-id=${task.id}>Delete</button>
             </div>
           </div>
         </div>
       </div>
       `;
       $('#single-container').html(domString);
-      if (task.isCompleted === true) {
-        $('.isCompleted-checkbox').attr('checked', true);
-      }
+      $('.notCompleted-checkbox').attr('checked', false);
     }
   });
 };
@@ -61,17 +65,27 @@ const printCompletedTasks = (taskArray) => {
     if (task.isCompleted === true) {
       domString += `
       <div class="card m-3">
-        <div class="text-center" id=${task.id} data-card-id=${task.id}>${task.task}
-          <div class="d-flex justify-content-around row">
-            <div class="form-check form-check-inline">
-              <label class="form-check-label m-2" for="${task.id}">Task Complete?</label>
-              <input class="form-check-input isCompleted-checkbox" type="checkbox" id="${task.id}">
+        <div class="container">
+          <div class="text-center" id=${task.id} data-card-id=${task.id}>
+            <div class="isCompleted">
+              ${task.task}
             </div>
+            <div class="d-flex justify-content-around row">
+              <div class="form-check form-check-inline">
+                <label class="form-check-label m-2" for="${task.id}">Task Complete?</label>
+                <input class="form-check-input isCompleted-checkbox" type="checkbox" id="${task.id}">
+              </div>
+            </div>
+              <div mt-4>
+                <button class="btn btn-danger delete-btn m-2" data-delete-id=${task.id}>Delete</button>
+              </div>
           </div>
         </div>
       </div>
       `;
       $('#completed').html(domString);
+      $('.isCompleted-checkbox').attr('checked', true);
+      $('.isCompleted').css('text-decoration', 'line-through');
     }
   });
 };
@@ -95,6 +109,7 @@ const deleteTask = (e) => {
     .then(() => {
       taskPage();
       $('#single-container').html('');
+      $('#completed').html('');
     })
     .catch((error) => {
       console.error('error in deleting task', error);
@@ -111,6 +126,7 @@ const updateCompletedTask = (e) => {
   taskData.updatedCompleteTask(taskId, isCompleted)
     .then(() => {
       taskPage();
+      $('#completed').html('');
     })
     .catch((err) => {
       console.error('error in updating flag', err);
@@ -121,6 +137,7 @@ const bindEvents = () => {
   $('body').on('click', '.get-single', getSingleTask);
   $('body').on('click', '.delete-btn', deleteTask);
   $('body').on('change', '.isCompleted-checkbox', updateCompletedTask);
+  $('body').on('change', '.notCompleted-checkbox', updateCompletedTask);
 };
 
 const initializeTaskPage = () => {

@@ -6,12 +6,8 @@ import initializeTaskPage from '../TaskPage/taskPage';
 const formBuilder = (task) => {
   const form = `
   <div class="form-group">
-    <label for="form-task">Task</label>
+    <label for="form-task"></label>
     <input type="text" class="form-control" value="${task.task}" id="form-task" placeholder="Do your homework">
-  </div>
-  <div class="form-group">
-    <label for="form-task-status">Status:</label>
-    <input type="text" class="form-control" value="${task.isCompleted}" id="form-task-status" placeholder="True">
   </div>
   `;
   return form;
@@ -34,7 +30,7 @@ const buildAddForm = () => {
 
   let domString = '<h2>Add New Task</h2>';
   domString += formBuilder(emptyTask);
-  domString += '<button class="btn btn-primary" id="add-task">Save New Task</button>';
+  domString += '<div class="d-flex justify-content-center"><button class="btn btn-primary" id="add-task">Save New Task</button></div>';
   $('#add-edit-task').html(domString).show();
 };
 
